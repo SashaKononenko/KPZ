@@ -42,47 +42,38 @@ class ProgramVariant1
             {
                 public void actionPerformed(ActionEvent e)
                 {
-                    if(telephone != null)
-                    {
+                    if(telephone != null) {
                         windowVariant1.getContentPane().remove(telephone);
                         telephone = null;
                     }
-                    if(phone != null)
-                    {
+                    if(phone != null) {
                         windowVariant1.getContentPane().remove(phone);
                         phone = null;
 
                     }
 
-                    switch ((String)constructors.getSelectedItem())
-                    {
-                        case "Telephone(String a)": {
+                    switch (constructors.getSelectedIndex()) {
+                        case 0: {
                             telephone = new Telephone("Alcatel");
-                            windowVariant1.getContentPane().repaint();
                             windowVariant1.getContentPane().add(telephone);
                         }
                         break;
-                        case "Telephone(String a,int b)":
-                        {
+                        case 1: {
                             telephone =  new Telephone("Alcatel",143);
-                            windowVariant1.getContentPane().repaint();
                             windowVariant1.getContentPane().add(telephone);
                         }
                         break;
-                        case "Phone(int a, int b, int c)":
-                        {
+                        case 2: {
                             phone =  new Phone(23,12,43);
-                            windowVariant1.getContentPane().repaint();
                             windowVariant1.getContentPane().add(phone);
                         }
                         break;
-                        case "Phone(int a, int b)":
-                        {
+                        case 3: {
                             phone =  new Phone(12,23);
-                            windowVariant1.getContentPane().repaint();
                             windowVariant1.getContentPane().add(phone);
                         }
                     }
+                    windowVariant1.getContentPane().repaint();
                     result.setText("Create object");
                 }
             }
@@ -107,20 +98,15 @@ class ProgramVariant1
             }
         );
 
-        setting.addActionListener(new ActionListener()
-            {
-                public void actionPerformed(ActionEvent e)
-                {
-                    if(telephone != null)
-                    {
-                        telephone.DrawWindow();
-                    }
-                    if(phone != null)
-                    {
-                        phone.DrawWindow();
-                    }
+        setting.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                if(telephone != null) {
+                    telephone.DrawWindow();
+                }
+                if(phone != null) {
+                    phone.DrawWindow();
                 }
             }
-        );
+        });
     }
 }

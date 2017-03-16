@@ -41,42 +41,26 @@ class ProgramVariant2
             {
                 public void actionPerformed(ActionEvent e)
                 {
-                    if(BaseСlass != null)
-                    {
+                    if(BaseСlass != null) {
                         windowVariant2.getContentPane().remove(BaseСlass);
                         BaseСlass = null;
                     }
 
-                    switch ((String)constructors.getSelectedItem())
-                    {
-                        case "Telephone(String a)":
-                        {
+                    switch (constructors.getSelectedIndex()) {
+                        case 0:
                             BaseСlass = new Telephone("Alcatel");
-                            windowVariant2.getContentPane().repaint();
-                            windowVariant2.getContentPane().add(BaseСlass);
-                        }
                         break;
-                        case "Telephone(String a,int b)":
-                        {
+                        case 1:
                             BaseСlass =  new Telephone("Alcatel",143);
-                            windowVariant2.getContentPane().repaint();
-                            windowVariant2.getContentPane().add(BaseСlass);
-                        }
                         break;
-                        case"Phone(int a, int b, int c)":
-                        {
+                        case 2:
                             BaseСlass =  new Phone(23,12,43);
-                            windowVariant2.getContentPane().repaint();
-                            windowVariant2.getContentPane().add(BaseСlass);
-                        }
                         break;
-                        case "Phone(int a, int b)":
-                        {
+                        case 3:
                             BaseСlass =  new Phone(12,23);
-                            windowVariant2.getContentPane().repaint();
-                            windowVariant2.getContentPane().add(BaseСlass);
-                        }
                     }
+                    windowVariant2.getContentPane().repaint();
+                    windowVariant2.getContentPane().add(BaseСlass);
                     result.setText("Create object");
                 }
             }
@@ -85,8 +69,7 @@ class ProgramVariant2
             {
                 public void actionPerformed(ActionEvent e)
                 {
-                    if(BaseСlass != null)
-                    {
+                    if(BaseСlass != null) {
                         BaseСlass.DrawWindow();
                     }
                 }
